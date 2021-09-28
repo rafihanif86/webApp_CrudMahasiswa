@@ -1,0 +1,90 @@
+<div *ngIf="hero" class="card-body col-md-6 ">
+  <h2 class="card-header" >{{hero.name | uppercase}} Details</h2>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label>ID:
+          <input class="form-control" [(ngModel)]="hero.id" placeholder="ID" disabled/>
+        </label>
+      </div>
+      <div class="form-group col-md-6"> 
+        <label>NIM:
+          <input class="form-control" [(ngModel)]="hero.nim" placeholder="NIM"/>
+        </label>
+      </div>
+      <div class="form-group col-md-12">
+        <label>Nama:
+          <input class="form-control" [(ngModel)]="hero.name" placeholder="Nama"/>
+        </label>
+      </div>
+      <div class="form-group col-md-12">
+        <label>Jenis_Kelamin:
+          <br>
+          <div class="form-check form-check-inline">
+              <input  type="radio" class="form-check-input" name="JenisKelamin" [(ngModel)]="hero.jenis_kelamin" value="L"/>
+              <label class="form-check-label" for="exampleRadios2">L</label>
+          </div>
+          <div class="form-check form-check-inline">
+              <input  type="radio" class="form-check-input" name="JenisKelamin" [(ngModel)]="hero.jenis_kelamin" value="P"/>
+              <label class="form-check-label" for="exampleRadios2">P</label>
+          </div>
+          </label>
+      </div>
+      <div class="form-group col-md-12">
+        <label>Alamat:
+          <input class="form-control" [(ngModel)]="hero.alamat" placeholder="Alamat"/>
+        </label>
+      </div>
+      <div class="form-group col-md-6">
+        <label>Nama_Bapak:
+          <input class="form-control" [(ngModel)]="hero.nama_bpk" placeholder="Nama_Bapak"/>
+        </label>
+      </div>
+      <div class="form-group col-md-6">
+        <label>Nama_Ibu:
+          <input class="form-control" [(ngModel)]="hero.nama_ibu" placeholder="Nama_Ibu"/>
+        </label>
+      </div>
+      <div class="form-group col-md-6">
+        <label>Jurusan:
+          <!-- <input [(ngModel)]="hero.jurusan" placeholder="Jurusan"/> -->
+          <select class="form-control" [(ngModel)]="hero.jurusan">
+              <option value="Teknologi Informasi">Teknologi Informasi</option>
+              <option value="Teknik Mesin">Teknik Mesin</option>
+              <option value="Teknik Elektro">Teknik Elektro</option>
+              <option value="Teknik Kimia">Teknik Kimia</option>
+              <option value="Teknik Sipil"> Teknik Sipil</option>
+              <option value="Akuntansi">Akuntansi</option>
+              <option value="Administrasi Niaga">Administrasi Niaga</option>
+          </select>
+        </label>
+      </div>
+      <div class="form-group col-md-6">
+        <label>Program_Studi:
+          <!-- <input [(ngModel)]="hero.prodi" placeholder="Program_Studi"/> -->
+          <select class="form-control" [(ngModel)]="hero.prodi">
+              <option value="D3 Manajemen Informatika">D3 Manajemen Informatika</option>
+              <option value="D4 Teknik Informatika">D4 Teknik Informatika</option>
+              <option value="D3 Teknik Elektronika"> D3 Teknik Elektronika</option>
+              <option value="D3 Teknik Listrik">D3 Teknik Listrik</option>
+              <option value="D3 Teknik Mesin">D3 Teknik Mesin</option>
+              <option value="D3 Teknik Sipil">D3 Teknik Sipil</option>
+              <option value="D3 Akuntansi">D3 Akuntansi</option>
+              <option value="D4 Akuntansi Manajemen">D4 Akuntansi Manajemen</option>
+              <option value="D3 Teknik Kimia">D3 Teknik Kimia</option>
+              <option value="D4 Teknologi Kimia Industri">D4 Teknologi Kimia Industri</option>
+              <option value="D4 Manajemen Pemasaran">D4 Manajemen Pemasaran</option>
+              <option value="D3 Administrasi Bisnis">D3 Administrasi Bisnis</option>
+          </select>
+        </label>
+      </div>
+      <div class="form-group col-md-12">
+        <label>IPK_Terakhir:
+          <input class="form-control" [(ngModel)]="hero.ipk_terakhir" placeholder="IPK_Terakhir"/>
+        </label>
+      </div>
+      <div class="form-group col-md-12">
+      <button class="btn btn-secondary float-left" (click)="goBack()">go back</button>
+      <button class="btn btn-primary float-right" (click)="save()">save</button>
+      </div>
+    </div>
+</div>

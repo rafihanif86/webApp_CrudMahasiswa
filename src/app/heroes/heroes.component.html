@@ -1,0 +1,155 @@
+<!-- <div>
+    <label>Nama Mahasiswa:
+      <input #heroName />
+    </label> -->
+    <!-- (click) passes input value to add() and then clears the input -->
+    <!-- <button (click)="add(heroName.value); heroName.value=''">
+      add
+    </button>
+  </div> -->
+
+
+
+<!-- <ul class="heroes">
+  <li *ngFor="let hero of heroes">
+    <a routerLink="/detail/{{hero.id}}">
+      <span class="badge">{{hero.id}}</span> {{hero.name}}
+    </a>
+    <button class="delete" title="delete hero"
+      (click)="delete(hero)">x</button>
+  </li>
+</ul> -->
+
+<div class="card-body">
+	<div class="row">
+		<div class="table-responsive">
+      <h2 class="card-header">Mahasiswa</h2>
+
+      <div class="card-body col-md-8">
+        <h3 class="card-header">Tambah Mahasiswa</h3>
+        <div class="form-row">
+            <div class="form-group col-md-12">
+              <label>NIM:
+                <input class="form-control" #heroNim />
+              </label>
+            </div>
+            <div class="form-group col-md-12 ">
+              <label>Nama Mahasiswa:
+                <input class="form-control" #heroName />
+              </label>
+            </div>
+            <div class="form-group col-md-6 mb-2">
+              <label>Jenis Kelamin:
+                <div class="form-check form-check-inline">
+                  <input type="radio" class="form-check-label" name="JenisKelamin" #heroJenisKel value="L"/>
+                  <label class="form-check-label" for="exampleRadios2">L</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input type="radio" class="form-check-label" name="JenisKelamin" #heroJenisKel value="P"/>
+                  <label class="form-check-label" for="exampleRadios2">P</label>
+                </div>
+              </label>
+            </div>
+            <div class="form-group col-md-6 mb-2">
+              <label>Alamat: 
+                  <input class="form-control" #heroAlamat />
+              </label>
+            </div>
+            <div class="form-group col-md-6 mb-2">
+              <label>Nama Bapak: 
+                  <input class="form-control" #heroBapak />
+              </label>
+            </div>
+            <div class="form-group col-md-6 mb-2" >
+              <label>Nama Ibu: 
+                  <input class="form-control" #heroIbu />
+              </label>
+            </div>
+            <div class="form-group col-md-6 mb-2">
+              <label>Jurusan:
+                  <!-- <input [(ngModel)]="hero.jurusan" placeholder="Jurusan"/> -->
+                  <select class="form-control" #heroJurusan>
+                      <option value="Teknologi Informasi">Teknologi Informasi</option>
+                      <option value="Teknik Mesin">Teknik Mesin</option>
+                      <option value="Teknik Elektro">Teknik Elektro</option>
+                      <option value="Teknik Kimia">Teknik Kimia</option>
+                      <option value="Teknik Sipil"> Teknik Sipil</option>
+                      <option value="Akuntansi">Akuntansi</option>
+                      <option value="Administrasi Niaga">Administrasi Niaga</option>
+                  </select>
+                </label>
+            </div>
+            <div class="form-group col-md-6 mb-2">
+              <label>Program_Studi:
+                  <!-- <input [(ngModel)]="hero.prodi" placeholder="Program_Studi"/> -->
+                  <select class="form-control" #heroProdi>
+                      <option value="D3 Manajemen Informatika">D3 Manajemen Informatika</option>
+                      <option value="D4 Teknik Informatika">D4 Teknik Informatika</option>
+                      <option value="D3 Teknik Elektronika"> D3 Teknik Elektronika</option>
+                      <option value="D3 Teknik Listrik">D3 Teknik Listrik</option>
+                      <option value="D3 Teknik Mesin">D3 Teknik Mesin</option>
+                      <option value="D3 Teknik Sipil">D3 Teknik Sipil</option>
+                      <option value="D3 Akuntansi">D3 Akuntansi</option>
+                      <option value="D4 Akuntansi Manajemen">D4 Akuntansi Manajemen</option>
+                      <option value="D3 Teknik Kimia">D3 Teknik Kimia</option>
+                      <option value="D4 Teknologi Kimia Industri">D4 Teknologi Kimia Industri</option>
+                      <option value="D4 Manajemen Pemasaran">D4 Manajemen Pemasaran</option>
+                      <option value="D3 Administrasi Bisnis">D3 Administrasi Bisnis</option>
+                  </select>
+                </label>
+            </div>
+            <div class="form-group col-md-12">
+              <label>IPK Terakhir: 
+                  <input class="form-control" #heroIPK />
+              </label>
+            </div>
+            <!-- (click) passes input value to add() and then clears the input -->
+            <button class="btn btn-primary float-left" (click)="add(heroNim.value, heroName.value, heroJenisKel.value, heroAlamat.value, heroBapak.value, heroIbu.value, heroJurusan.value, heroProdi.value, heroIPK.value); 
+            heroNim.value=''; heroName.value=''; heroJenisKel.value=''; heroAlamat.value=''; heroBapak.value=''; heroIbu.value=''; heroJurusan.value=''; heroProdi.value=''; heroIPK.value='';">
+              add
+            </button>
+        </div>
+      </div>
+      
+      <div class="card-body col-md-12">
+        <h3 class="card-header">Data Mahasiswa</h3>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">NIM</th>
+              <th scope="col">NAMA</th>
+              <th scope="col">JENIS KELAMIN</th>
+              <th scope="col">ALAMAT</th>
+              <th scope="col">NAMA BAPAK</th>
+              <th scope="col">NAMA IBU</th>
+              <th scope="col">JURUSAN</th>
+              <th scope="col">PRODI</th>
+              <th scope="col">IPK TERAKHIR</th>
+              <th scope="col">OPSI</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let hero of heroes">
+              <td scope="row"> {{hero.id}} </td>
+              <td> {{hero.nim}}</td>
+              <td> {{hero.name}}</td>
+              <td> {{hero.jenis_kelamin}}</td>
+              <td> {{hero.alamat}}</td>
+              <td>{{hero.nama_bpk}}</td>
+              <td> {{hero.nama_ibu}}</td>
+              <td> {{hero.jurusan}}</td>
+              <td> {{hero.prodi}}</td>
+              <td> {{hero.ipk_terakhir}}</td>
+              <td>
+                <button type="button" class="btn btn-primary btn-sm" routerLink ="/detail/{{hero.id}}">EDIT</button>
+                <button type="button" class="btn btn-secondary btn-sm" (click)="delete(hero)">HAPUS</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+		</div>
+	</div>
+</div>

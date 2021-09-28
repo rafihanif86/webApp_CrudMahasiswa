@@ -1,0 +1,13 @@
+<div class="card-body">
+  <h3 class="card-header">Top Mahasiswa</h3>
+  <div class="card-body">
+    <a *ngFor="let hero of heroes" class="col-1-5"
+        routerLink="/detail/{{hero.id}}">
+      <div class="alert alert-primary">
+        <h4>{{hero.name}}</h4>
+      </div>
+    </a>
+  </div>
+
+  <app-hero-search></app-hero-search>
+</div>
